@@ -12,3 +12,5 @@ sequelize.authenticate()
 .catch((err)=>{
     console.error('Não foi possível se conectar com o banco de dados: ', err)
 })
+
+module.exports = sequelize

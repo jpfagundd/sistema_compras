@@ -40,6 +40,7 @@ const Produto = conn.define('produto',{
         allowNull: false
     }
 },{
+    tableName: 'produtos',
     timestamps: false
 })
 

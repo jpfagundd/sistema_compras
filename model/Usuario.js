@@ -46,6 +46,7 @@ const Usuario = conn.define('usuario',{
         allowNull: false
     }
 },{
+    tableName: 'usuarios',
     timestamps: false
 })
 

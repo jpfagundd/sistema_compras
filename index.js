@@ -8,10 +8,32 @@ const PORT = process.env.PORT
 const hostname = 'localhost'
 
 const conn = require('./db/conn')
+const usuarioController = require('./controller/usuario.controller')
+const produtoController = require('./controller/produto.controller')
+const compraController = require('./controller/compra.controller')
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors())
+
+app.get('/usuario', usuarioController.listar)
+app.post('/usuario', usuarioController.cadastrar)
+app.put('/usuario', usuarioController.atualizar)
+app.delete('/usuario', usuarioController.apagar)
+
+app.get('/produto', produtoController.listar)
+app.post('/produto', produtoController.cadastrar)
+app.put('/produto', produtoController.atualizar)
+app.delete('/produto', produtoController.apagar)
+
+app.get('/compra', compraController.listar)
+app.post('/compra', compraController.cadastrar)
+app.put('/compra', compraController.atualizar)
+app.delete('/compra', compraController.apagar)
+
+app.get('/', (req,res)=>{
+    res.status(200).json({message: "API rodando!"})
+})
 
 conn.sync()
 .then(()=>{

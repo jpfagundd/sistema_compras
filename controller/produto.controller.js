@@ -23,11 +23,11 @@ const listar = async (req,res)=>{
 
 
 const apagar = async (req,res)=>{
-    const valor = req.params.id
+    const id = req.params.id
     try{
-        const dados = await Produto.findByPk(valor)
+        const dados = await Produto.findByPk(id)
         if(dados){
-            await Produto.destroy({where: { id: valor}})
+            await Produto.destroy({where: { id: id}})
             res.status(204).json({message: 'Dados excluídos com sucesso!'})
         }else{
             res.status(404).json({message: 'Produto não encontrado!'})
@@ -40,13 +40,13 @@ const apagar = async (req,res)=>{
 
 
 const atualizar = async (req,res)=>{
-    const valor = req.params.id
+    const id = req.params.id
     const valores = req.body
     try{
-        let dados = await Produto.findByPk(valor)
+        let dados = await Produto.findByPk(id)
         if(dados){
-            await Produto.update(valores, {where: { id: valor}})
-            dados = await Produto.findByPk(valor)
+            await Produto.update(valores, {where: { id: id}})
+            dados = await Produto.findByPk(id)
             res.status(200).json(dados)
         }else{
             res.status(404).json({message: 'Produto não encontrado!'})

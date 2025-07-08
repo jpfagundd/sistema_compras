@@ -23,11 +23,11 @@ const listar = async (req,res)=>{
 
 
 const apagar = async (req,res)=>{
-    const valor = req.params.id
+    const idCompra = req.params.id
     try{
-        const dados = await Compra.findByPk(valor)
+        const dados = await Compra.findByPk(idCompra)
         if(dados){
-            await Compra.destroy({where: { idCompra: valor}})
+            await Compra.destroy({where: { idCompra: idCompra}})
             res.status(204).json({message: 'Dados excluídos com sucesso!'})
         }else{
             res.status(404).json({message: 'Compra não encontrado!'})
@@ -40,13 +40,13 @@ const apagar = async (req,res)=>{
 
 
 const atualizar = async (req,res)=>{
-    const valor = req.params.id
+    const idCompra = req.params.id
     const valores = req.body
     try{
-        let dados = await Compra.findByPk(valor)
+        let dados = await Compra.findByPk(idCompra)
         if(dados){
-            await Compra.update(valores, {where: { idCompra: valor}})
-            dados = await Compra.findByPk(valor)
+            await Compra.update(valores, {where: { idCompra: idCompra}})
+            dados = await Compra.findByPk(idCompra)
             res.status(200).json(dados)
         }else{
             res.status(404).json({message: 'Compra não encontrado!'})

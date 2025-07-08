@@ -18,18 +18,18 @@ app.use(cors())
 
 app.get('/usuario', usuarioController.listar)
 app.post('/usuario', usuarioController.cadastrar)
-app.put('/usuario', usuarioController.atualizar)
-app.delete('/usuario', usuarioController.apagar)
+app.put('/usuario/:id', usuarioController.atualizar)
+app.delete('/usuario/:id', usuarioController.apagar)
 
 app.get('/produto', produtoController.listar)
 app.post('/produto', produtoController.cadastrar)
-app.put('/produto', produtoController.atualizar)
-app.delete('/produto', produtoController.apagar)
+app.put('/produto/:id', produtoController.atualizar)
+app.delete('/produto/:id', produtoController.apagar)
 
 app.get('/compra', compraController.listar)
 app.post('/compra', compraController.cadastrar)
-app.put('/compra', compraController.atualizar)
-app.delete('/compra', compraController.apagar)
+app.put('/compra/:idCompra', compraController.atualizar)
+app.delete('/compra/:idCompra', compraController.apagar)
 
 app.get('/', (req,res)=>{
     res.status(200).json({message: "API rodando!"})

@@ -4,7 +4,7 @@ const app = express()
 require('dotenv').config()
 
 const cors = require('cors')
-const PORT = process.env.PORT
+const PORT = 3000 || process.env.PORT
 const hostname = 'localhost'
 
 const conn = require('./db/conn')

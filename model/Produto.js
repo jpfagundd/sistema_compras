@@ -20,11 +20,11 @@ const Produto = conn.define('produto',{
         allowNull: false
     },
     preco: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     percentualDesconto: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     estoque: {
@@ -32,8 +32,7 @@ const Produto = conn.define('produto',{
         allowNull: false
     },
     marca: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.CHAR,
     },
     imagem: {
         type: DataTypes.CHAR,

@@ -31,7 +31,7 @@ const Compra = conn.define('produto',{
         type: DataTypes.DATE,
         allowNull: false
     },
-    precoUsuario: {
+    precoUnitario: {
         type: DataTypes.FLOAT,
         allowNull: false
     },

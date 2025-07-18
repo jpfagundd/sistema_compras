@@ -1,6 +1,8 @@
 require('dotenv').config()
 const conn = require('./db/conn')
-const { Usuario, Produto, Compra } = require('./model/rel')
+const Usuario = require('./model/Usuario')
+const Produto = require('./model/Produto')
+const Compra = require('./model/Compra')
 
 async function syncDataBase() {
     try{

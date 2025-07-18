@@ -16,12 +16,11 @@ const Usuario = conn.define('usuario',{
         allowNull: false
     },
     idade: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.CHAR,
         allowNull: false
     },
     email: {
         type: DataTypes.CHAR,
-        unique: true,
         allowNull: false
     },
     telefone: {

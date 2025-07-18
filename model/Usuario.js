@@ -24,7 +24,7 @@ const Usuario = conn.define('usuario',{
         allowNull: false
     },
     telefone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.CHAR,
         unique: true,
         allowNull: false
     },

@@ -35,7 +35,7 @@ const Produto = conn.define('produto',{
         type: DataTypes.CHAR,
     },
     imagem: {
-        type: DataTypes.CHAR,
+        type: DataTypes.TEXT,
         allowNull: false
     }
 },{

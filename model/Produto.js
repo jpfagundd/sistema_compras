@@ -12,7 +12,7 @@ const Produto = conn.define('produto',{
         allowNull: false
     },
     descricao: {
-        type: DataTypes.CHAR,
+        type: DataTypes.TEXT,
         allowNull: false
     },
     categoria: {

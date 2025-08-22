@@ -57,4 +57,32 @@ const atualizar = async (req,res)=>{
     }
 }
 
-module.exports = { cadastrar, listar, apagar, atualizar }
+const grafico = async (req,res)=>{
+    try{
+        const dados = await Usuario.findAll()
+        res.status(200).json(dados)
+    }catch(err){
+        console.error(`Erro ao listar dados do gráfico!`,err)
+        res.status(500).json({message: 'Erro ao listar dados do gráfico!'})
+    }
+}
+
+const listarId = async (req,res)=>{
+    const valor = req.params.id
+    console.log(valor)
+    try{
+        const dados = await Usuario.findOne({where: {id: valor}})
+        if(dados === null){
+            console.log('Usuário não encontrado!')
+            res.status(404).json({message: 'Usuário não encontrado!'})
+        }else{
+            console.log(dados)
+            res.status(200).json(dados)
+        }
+    }catch(err){
+        console.error(`Erro ao listar dados do gráfico!`,err)
+        res.status(500).json({message: 'Erro ao listar dados do gráfico!'})
+    }
+}
+
+module.exports = { cadastrar, listar, apagar, atualizar, grafico, listarId}

@@ -30,9 +30,10 @@ app.put('/produto/:id', produtoController.atualizar)
 app.delete('/produto/:id', produtoController.apagar)
 
 app.get('/compra', compraController.listar)
+app.get('/compra/listar/:id', compraController.listarId)
 app.post('/compra', compraController.cadastrar)
-app.put('/compra/:idCompra', compraController.atualizar)
-app.delete('/compra/:idCompra', compraController.apagar)
+app.put('/compra/:id', compraController.atualizar)
+app.delete('/compra/:id', compraController.apagar)
 
 app.get('/', (req,res)=>{
     res.status(200).json({message: "API rodando!"})
